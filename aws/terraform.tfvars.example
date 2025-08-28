@@ -1,0 +1,25 @@
+# Copy this file to terraform.tfvars and customize the values
+aws_region   = "eu-central-1"
+project_name = "k8s"
+environment  = "dev"
+
+# VPC Configuration
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.10.0/24", "10.0.20.0/24"]
+
+# EKS Configuration
+kubernetes_version    = "1.33"
+eks_instance_types    = ["t3.nano"]
+eks_desired_capacity  = 2
+eks_max_capacity      = 4
+eks_min_capacity      = 1
+
+# Helm Application Configuration
+httpd_namespace      = "httpd"
+httpd_app_name       = "httpd-app"
+httpd_chart_version  = "10.2.4"
+httpd_replica_count  = 2
+httpd_service_type   = "LoadBalancer"
+httpd_service_port   = 80
+

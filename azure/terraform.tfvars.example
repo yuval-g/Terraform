@@ -1,0 +1,23 @@
+# Copy this file to terraform.tfvars and customize the values
+subscription_id = "your-subscription-id-here"
+location        = "East US"
+project_name    = "k8s"
+environment     = "dev"
+
+# VNet Configuration
+vnet_cidr             = "10.0.0.0/16"
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.10.0/24", "10.0.20.0/24"]
+
+# AKS Configuration
+kubernetes_version    = "1.28"
+aks_vm_size           = "Standard_DS2_v2"
+aks_node_count        = 2
+
+# Helm Application Configuration
+httpd_namespace      = "httpd"
+httpd_app_name       = "httpd-app"
+httpd_chart_version  = "10.2.4"
+httpd_replica_count  = 2
+httpd_service_type   = "LoadBalancer"
+httpd_service_port   = 80
